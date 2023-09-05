@@ -11,7 +11,7 @@ document.getElementById('registroForm').addEventListener('submit', function (e) 
         fechaNacimiento: fechaNacimiento
     };
 
-    fetch('https://jsonplaceholder.typicode.com/users', {
+    fetch(' https://jsonplaceholder.typicode.com/users.', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -19,9 +19,9 @@ document.getElementById('registroForm').addEventListener('submit', function (e) 
         body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(data => console.log(data))
     .then(data => {
-       document.getElementById('respuesta').innerHTML = `Respuesta del servidor: ${JSON.stringify(data)}`;
+      document.getElementById('respuesta').innerHTML = `Respuesta del servidor: ${JSON.stringify(data)}`;
     })
     .catch(error => {
         console.error('Error al enviar la solicitud:', error);
